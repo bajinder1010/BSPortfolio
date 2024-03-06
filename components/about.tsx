@@ -23,7 +23,7 @@ export default function About() {
       <SectionHeading><span className="font-bold text-5xl">About me</span></SectionHeading>
       <p className="mb-3 text-left text-2xl py-1  leading-normal text-slate-500">
         I began my coding journey in 1995, upon receiving my first computer—a gift from my dad.{" "}My first programming language was BASIC.
-        I distinctly remember the <span className="font-medium">'ASP in a Nutshell'</span> book by O'Reilly – my entry point into the world of web development.
+        I distinctly remember the <span className="font-medium">&apos;ASP in a Nutshell&apos;</span> book by O&apos;Reilly – my entry point into the world of web development.
       </p>
 
       <p className="mb-3 text-left text-2xl py-1  leading-normal text-slate-500">As an experienced software engineer,
@@ -33,7 +33,7 @@ export default function About() {
       </p>
 
       <p className="mb-3 text-left text-2xl py-1  leading-normal text-slate-500">
-        <span className="italic">Besides all this</span>, I enjoy gardening, watching "living off the grid" videos on YouTube, and{" "}
+        <span className="italic">Besides all this</span>, I enjoy gardening, watching &quot;living off the grid&quot; videos on YouTube, and{" "}
         <span className="font-medium">learning new things</span>.
       </p>
     </motion.section>

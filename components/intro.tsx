@@ -61,7 +61,7 @@ export default function Intro() {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <span className="font-extrabold tracking-wide  text-5xl text-[#f6f9fc]">Hello, I'm Bajinder Singh</span> 
+        <span className="font-extrabold tracking-wide  text-5xl text-[#f6f9fc]">Hello, I&apos;m Bajinder Singh</span> 
         <div className="text-3xl py-1  leading-snug text-[#8ea9bf]">Senior Software Engineer currently based in London,UK, and employed at TCS. My professional journey includes collaborating with clients worldwide, contributing to a global perspective in software development.
 
         I develop things in my free time.</div>
