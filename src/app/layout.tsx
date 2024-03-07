@@ -4,6 +4,7 @@ import Header from "../../components/header";
 import ActiveSectionContextProvider from "../../context/active-section-context";
 import Footer from "../../components/footer";
 import { Toaster } from "react-hot-toast";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({subsets: ['latin'] })
 
@@ -31,6 +32,7 @@ export default function RootLayout({
             <Toaster position="top-right" />
         </ActiveSectionContextProvider>
       </body>
+      <GoogleAnalytics gaId="G-H9KY82YM9K" />
     </html>
   )
 }
