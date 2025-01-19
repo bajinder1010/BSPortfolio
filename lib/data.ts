@@ -112,6 +112,14 @@ export const projectsData = [
     imageUrl: '/diwaliDiyas.mp4',
     url:'https://bajinder1010.github.io/Diwali/',
   },
+  {
+    title: "Raspberry Pi Radio",
+    description:
+      "Instead of buying a radio, I repurposed my Raspberry Pi with a TEA5767 module to build one myself.You can see all the details on my blog page by clicking on the heading link. The page will take a little to load as its hosted on free plan :)",
+    tags: ["Python", "Raspberry Pi","IoT"],
+    imageUrl: '/radio_crop.mp4',
+    url:'https://www.hbani.com/blog/juDDfa7mXUfdXOQ3l312',
+  },
 ] as const;
 
 export const skillsGroupData = [
