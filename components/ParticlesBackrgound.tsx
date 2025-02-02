@@ -91,12 +91,12 @@ const ParticlesBackrgound = ({
           value: "#fff",
         },
         links: {
-          color: "#ad1357",
+          color: "#F2B680",
           distance: 150,
           blink:true,
           enable: true,
-          opacity: 0.5,
-          width: 1,
+          opacity: 0.7,
+          width: 1.5,
         },
         
         move: {
