@@ -120,6 +120,14 @@ export const projectsData = [
     imageUrl: '/radio_crop.mp4',
     url:'https://www.hbani.com/blog/juDDfa7mXUfdXOQ3l312',
   },
+  {
+    title: "Maze Solver",
+    description:
+      "This web app generates and solves mazes using BFS. Users can draw walls and move the start (green) and end (red) points. While BFS finds the shortest path, it can be slow. I plan to implement A* in the future for improved efficiency.",
+    tags: ["Javascript", "Html5","Canvas"],
+    imageUrl: '/maze.mp4',
+    url:'https://bajinder1010.github.io/BFS_Maze/',
+  },
 ] as const;
 
 export const skillsGroupData = [
