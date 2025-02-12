@@ -62,7 +62,9 @@ export default function Intro() {
         animate={{ opacity: 1, y: 0 }}
       >
         <span className="font-extrabold tracking-wide  text-5xl text-[#f6f9fc]">Hello, I&apos;m Bajinder Singh</span> 
-        <div className="text-3xl py-1  leading-snug text-[#8ea9bf]">Senior Software Engineer currently based in London,UK, and employed at <a href="https://www.tcs.com/" target="_blank" className="font-medium text-cyan-300 underline dark:text-blue-100 hover:no-underline">tcs</a>. My professional journey includes collaborating with clients worldwide, contributing to a global perspective in software development.
+        <div className="text-3xl py-1  leading-snug text-[#8ea9bf]">Senior Software Engineer currently based in London,UK, and employed at <a href="https://www.tcs.com/" target="_blank" className="relative inline-block text-blue-500 before:content-[''] before:absolute before:left-0 before:top-[82%]
+                 before:w-full before:h-[3px] before:bg-blue-500 before:scale-x-0 before:transition-transform 
+                 before:duration-300 hover:before:scale-x-100">tcs</a>. My professional journey includes collaborating with clients worldwide, contributing to a global perspective in software development.
 
         I develop things in my free time.</div>
       </motion.h1>
