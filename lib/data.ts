@@ -11,6 +11,7 @@ import jsImg from "../public/skills/JavaScript.svg"
 import netImg from "../public/skills/NET_Core_Logo.svg"
 import expressImg from "../public/skills/ExpressJS.webp"
 import csharpImg from "../public/skills/Logo_C_sharp.svg"
+import javaImg from "../public/skills/Java-Logo.svg"
 import flaskImg from "../public/skills/Flask.svg"
 import kafkaImg from "../public/skills/Apache_kafka.svg"
 import typeScriptImg from "../public/skills/TypeScript.svg"
@@ -145,6 +146,10 @@ export const skillsGroupData = [
       {
         name:"C#",
         url:csharpImg
+      }, 
+      {
+        name:"Java",
+        url:javaImg
       }, 
       {
         name:"Nodejs",
