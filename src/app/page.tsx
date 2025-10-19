@@ -5,6 +5,7 @@ import SectionEnd from "../../components/section-end";
 import Projects from "../../components/projects";
 import Skills from "../../components/skills";
 import Contact from "../../components/contact";
+import ChatWidget from '../../components/ChatWidget';
 export default function Home() {
   return (
     <main className="flex flex-col items-center px-0">
@@ -19,6 +20,7 @@ export default function Home() {
     <Skills />
     <SectionEnd color="#f2f2f2" angle="4deg"/>
     <Contact />
+    <ChatWidget />
   </main>
   )
 }
