@@ -39,13 +39,15 @@ export async function POST(req: Request) {
 
     const context = topDocs.map((d) => d.text).join('\n\n');
     const prompt = `
-You are a friendly and knowledgeable assistant.
+You are a helpful assistant. Use only the information provided below to answer the user's question.
+If the answer cannot be found in the information, respond with:
+"I'm sorry, I don't have enough information from the provided documents to answer that."
 
-Use the information below only to ensure accuracy. 
-Respond naturally, as if you already know the answer — 
-do not mention context, documents, or sources.you can give website links mentioned in context.
+Do not use any outside knowledge or make assumptions.
+Do not mention the context, embeddings, or that you are limited in any way.
+Respond naturally, as if speaking conversationally.
 
-Context:
+Information:
 ${context}
 
 Question:
