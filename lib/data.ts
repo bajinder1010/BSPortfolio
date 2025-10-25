@@ -28,7 +28,17 @@ import azureImg from "../public/skills/Microsoft_Azure.svg"
 import awsImg from "../public/skills/Amazon_Web_Services_Logo.svg"
 import firebaseImg from "../public/skills/Firebase_Logo.svg"
 import nextImg from "../public/skills/Nextjs-logo.svg"
-
+import HuggingFaceImg from "../public/skills/huggingface.svg"
+import LangChainImg from "../public/skills/langchain-color.png"
+import LangGraphImg from "../public/skills/langgraph-color.png"
+import N8nImg from "../public/skills/n8n-color.png"
+import KerasImg from "../public/skills/Keras.svg"
+import TensorFlowImg from "../public/skills/TensorFlow.svg"
+import ViteImg from "../public/skills/Vite.svg"
+import DataDogImg from "../public/skills/Datadog.svg"
+import RedisImg from "../public/skills/Redis.svg"
+import PrometheusImg from "../public/skills/Prometheus.svg"
+import GraphanaImg from "../public/skills/Grafana.svg"
 
 export const links = [
   {
@@ -206,6 +216,10 @@ export const skillsGroupData = [
         url:nextImg
       },
       {
+        name:"Vite",
+        url:ViteImg
+      },
+      {
         name:"GreenSock",
         url:greenSockImg
       },
@@ -226,11 +240,15 @@ export const skillsGroupData = [
         name:"PostgreSQL",
         url:postGresImg
       },
+      {
+        name:"Redis",
+        url:RedisImg
+      },
       
     ],
   },
   {
-    heading: "Devops",
+    heading: "Devops/Monitoring",
     skillsDetails: [
       {
         name:"Git",
@@ -255,6 +273,48 @@ export const skillsGroupData = [
       {
         name:"Firebase",
         url:firebaseImg
+      },
+      {
+        name:"DataDog",
+        url:DataDogImg
+      },
+      {
+        name:"Prometheus",
+        url:PrometheusImg
+      },
+      {
+        name:"Graphana",
+        url:GraphanaImg
+      },
+      
+    ],
+  },
+  {
+    heading: "GenAI/ML",
+    skillsDetails: [
+      {
+        name:"LangChain",
+        url:LangChainImg
+      },
+      {
+        name:"LangGraph",
+        url:LangGraphImg
+      },
+      {
+        name:"n8n",
+        url:N8nImg
+      },
+      {
+        name:"Hugging Face",
+        url:HuggingFaceImg
+      },
+      {
+        name:"Keras",
+        url:KerasImg
+      },
+       {
+        name:"TensorFlow",
+        url:TensorFlowImg
       },
       
     ],
