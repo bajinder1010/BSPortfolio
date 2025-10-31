@@ -1,47 +1,60 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X } from 'lucide-react';
-import { useRef, useEffect } from 'react';
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { MessageCircle, X } from "lucide-react";
+import { useRef, useEffect } from "react";
+import Image from "next/image";
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState<{ role: string; content: string }[]>([]);
-  const [input, setInput] = useState('');
+  const [messages, setMessages] = useState<{ role: string; content: string }[]>(
+    []
+  );
+  const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const samplePrompts = [
-    'What is your name',
-    'Your current company',
-    'Technologies you worked on',
+    "Can you tell me your name?",
+    "Where are you currently working?",
+    "What technologies or tools have you worked with",
   ];
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, loading]);
 
   const sendMessage = async (text?: string) => {
     const messageText = text || input;
     if (!messageText.trim()) return;
-
-    const newMessage = { role: 'user', content: messageText };
+    setInput("");
+    const newMessage = { role: "user", content: messageText };
     setMessages((prev) => [...prev, newMessage]);
     setLoading(true);
 
     try {
-      const res = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: messageText }),
       });
 
       const data = await res.json();
-      setMessages((prev) => [...prev, { role: 'assistant', content: data.answer }]);
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: data.answer },
+      ]);
     } catch (err) {
       setMessages((prev) => [
         ...prev,
-        { role: 'assistant', content: '❌ Error getting response. Please try again.' },
+        {
+          role: "assistant",
+          content: "❌ Error getting response. Please try again.",
+        },
       ]);
     }
 
-    setInput('');
+    setInput("");
     setLoading(false);
   };
 
@@ -76,9 +89,7 @@ export default function ChatWidget() {
             <div className="flex-1 p-3 overflow-y-auto max-h-[400px] bg-gray-50">
               {messages.length === 0 && (
                 <div className="text-center mt-6">
-                  <p className="text-gray-500 text-sm mb-3">
-                    👋 Hi!.
-                  </p>
+                  <p className="text-gray-500 text-sm mb-3">👋 Hi!.</p>
 
                   {/* 🌟 Sample prompts */}
                   <div className="flex flex-wrap justify-center gap-2">
@@ -98,13 +109,31 @@ export default function ChatWidget() {
               {messages.map((msg, i) => (
                 <div
                   key={i}
-                  className={`my-2 p-2 rounded-lg ${
-                    msg.role === 'user'
-                      ? 'bg-blue-200 text-right ml-8'
-                      : 'bg-gray-200 text-left mr-8'
+                  className={`flex items-start gap-2 my-2 ${
+                    msg.role === "user" ? "justify-end" : "justify-start"
                   }`}
                 >
-                  {msg.content}
+                  {/* 👇 Show your image before assistant messages */}
+                  {msg.role === "assistant" && (
+                    <Image
+                      src="/avatar.png" // <-- your image (place in /public)
+                      alt="AI Avatar"
+                      width={30}
+                      height={30}
+                      className="rounded-full"
+                    />
+                  )}
+
+                  {/* Message bubble */}
+                  <div
+                    className={`p-2 rounded-lg max-w-[75%] ${
+                      msg.role === "user"
+                        ? "bg-blue-200 text-right ml-8"
+                        : "bg-gray-200 text-left mr-8"
+                    }`}
+                  >
+                    {msg.content}
+                  </div>
                 </div>
               ))}
 
@@ -115,6 +144,7 @@ export default function ChatWidget() {
               )}
               <div ref={messagesEndRef} />
             </div>
+
             <div className="p-2 border-t bg-white flex">
               <input
                 className="flex-1 px-3 py-2 border rounded-lg text-sm"
@@ -122,7 +152,7 @@ export default function ChatWidget() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => {
-                if (e.key === 'Enter' && !e.shiftKey) {
+                  if (e.key === "Enter" && !e.shiftKey) {
                     e.preventDefault();
                     sendMessage();
                   }
