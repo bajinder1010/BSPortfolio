@@ -39,6 +39,7 @@ import DataDogImg from "../public/skills/Datadog.svg"
 import RedisImg from "../public/skills/Redis.svg"
 import PrometheusImg from "../public/skills/Prometheus.svg"
 import GraphanaImg from "../public/skills/Grafana.svg"
+import OpenAiImg from "../public/skills/openai.svg"
 
 export const links = [
   {
@@ -315,6 +316,10 @@ export const skillsGroupData = [
        {
         name:"TensorFlow",
         url:TensorFlowImg
+      },
+      {
+        name:"OpenAI",
+        url:OpenAiImg
       },
       
     ],
