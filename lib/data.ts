@@ -140,6 +140,14 @@ export const projectsData = [
     imageUrl: '/maze.mp4',
     url:'https://bajinder1010.github.io/BFS_Maze/',
   },
+  {
+    title: "Fractal Tree",
+    description:
+      "A JavaScript fractal tree that generates intricate branching patterns through recursion.Click anywhere on the browser window to grow trees",
+    tags: ["Javascript", "Html5","Canvas"],
+    imageUrl: '/tree.mp4',
+    url:'https://bajinder1010.github.io/FractalTrees/',
+  },
 ] as const;
 
 export const skillsGroupData = [
